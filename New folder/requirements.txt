@@ -1,0 +1,11 @@
+fastapi==0.111.1
+uvicorn==0.24.0
+python-dotenv==1.0.0
+SQLAlchemy==2.0.50
+psutil==5.9.5
+qdrant-client==1.11.0
+PyMuPDF==1.27.2.3
+openai==1.9.0
+requests==2.31.0
+python-multipart==0.0.7
+pydantic==2.13.4

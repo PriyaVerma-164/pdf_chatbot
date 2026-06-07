@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DocuMind AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard-shell">
+    <header class="top-pane">
+      <div class="brand-block">
+        <div class="brand-mark" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div>
+          <p class="brand-kicker">PDF chatbot</p>
+          <h1>DocuMind AI</h1>
+        </div>
+      </div>
+      <div class="workspace-pill">
+        <span></span>
+        Document workspace
+      </div>
+    </header>
+
+    <aside class="left-sidebar">
+      <section class="sidebar-card upload-card">
+        <p class="section-kicker">Intake</p>
+        <h2>Add PDF</h2>
+        <label id="dropZone" class="drop-zone">
+          <input id="pdfUpload" type="file" accept="application/pdf" />
+          <span class="file-icon" aria-hidden="true"></span>
+          <strong id="selectedFileName">Drop a PDF here</strong>
+          <small>or click to browse from your device</small>
+        </label>
+        <button id="uploadButton" class="primary-button" type="button">Upload</button>
+        <p id="uploadStatus" class="inline-status">Maximum upload size follows backend settings.</p>
+      </section>
+
+      <section class="library-section">
+        <div class="library-heading">
+          <div>
+            <p class="section-kicker">Library</p>
+            <h2>Documents</h2>
+          </div>
+          <button id="refreshButton" class="icon-button" type="button" aria-label="Refresh documents">Refresh</button>
+        </div>
+        <div id="pdfList" class="pdf-list"></div>
+      </section>
+    </aside>
+
+    <main class="main-panel">
+      <header class="scope-header">
+        <span class="scope-badge">Current Scope</span>
+        <h2 id="scopeTitle">Select a document</h2>
+        <p id="scopeSubtitle">Choose a completed PDF from the library.</p>
+      </header>
+
+      <div class="workspace-columns">
+        <section class="chat-column">
+          <div class="chat-card">
+            <div class="section-head chat-head">
+              <div>
+                <p class="section-kicker">Focused Chat</p>
+                <h3>Ask DocuMind</h3>
+              </div>
+              <span id="loadingIndicator" class="loading-indicator hidden">Answering...</span>
+            </div>
+            <div class="chat-window" id="chatWindow">
+              <div class="chat-empty">Select an ingested PDF to start a focused chat session.</div>
+            </div>
+            <div class="chat-input-row">
+              <textarea id="questionInput" rows="2" placeholder="Ask about the selected document..." disabled></textarea>
+              <button id="sendButton" class="send-button" type="button" disabled>Send</button>
+            </div>
+            <p class="chat-footnote">Answers stay locked to the selected PDF.</p>
+          </div>
+        </section>
+
+        <section class="preview-card">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">Preview</p>
+              <h3>Selected PDF</h3>
+            </div>
+            <p id="previewHint">Metadata and page preview appear after selection.</p>
+          </div>
+          <div class="preview-frame">
+            <embed id="pdfPreview" type="application/pdf" width="100%" height="100%" />
+          </div>
+        </section>
+      </div>
+    </main>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
