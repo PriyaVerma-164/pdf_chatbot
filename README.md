@@ -2,7 +2,7 @@
 
 A production-ready single PDF chatbot built with FastAPI, Qdrant, PyMuPDF, and streaming SSE.
 
- SS of pdf_chabot Application
+ Screensho of pdf_chabot Application
  <img width="1907" height="962" alt="image" src="https://github.com/user-attachments/assets/c6a29163-2498-48df-91db-07b7e817cfff" />
 
  After uploading PDF.
